@@ -1,10 +1,10 @@
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
 
-{% block title %}About{% endblock%}
+{% block title %}{{ "about.title" | trans }}{% endblock%}
 
 {% block body %}
     <header>
-        <h1>About symblog</h1>
+        <h1>{{ "about.about_this_site" | trans }}</h1>
     </header>
     <article>
         <p>Donec imperdiet ante sed diam consequat et dictum erat faucibus. Aliquam sit

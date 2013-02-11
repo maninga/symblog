@@ -22,25 +22,32 @@ class BloggerBlogExtension extends \Twig_Extension
         {
             // Seconds
             $time = $delta;
-            $duration = $time . " second" . (($time > 1) ? "s" : "") . " ago";
+            $duration = "il y a " . $time . " seconde" . (($time > 1) ? "s" : "");
         }
         else if ($delta <= 3600)
         {
             // Mins
             $time = floor($delta / 60);
-            $duration = $time . " minute" . (($time > 1) ? "s" : "") . " ago";
+            $duration = "il y a " . $time . " minute" . (($time > 1) ? "s" : "");
         }
-        else if ($delta <= 86400)
+        else if ($delta <= 3600*24)
         {
             // Hours
             $time = floor($delta / 3600);
-            $duration = $time . " hour" . (($time > 1) ? "s" : "") . " ago";
+            $duration = "il y a " . $time . " heure" . (($time > 1) ? "s" : "");
         }
-        else
+        else if ($delta <= 3600*24*7)
         {
             // Days
-            $time = floor($delta / 86400);
-            $duration = $time . " day" . (($time > 1) ? "s" : "") . " ago";
+            $time = floor($delta / (3600*24));
+            $duration = "il y a " . $time . " jour" . (($time > 1) ? "s" : "");
+        }
+
+        else
+        {
+            // Weeks
+            $time = floor($delta / (3600*24*7));
+            $duration = "il y a " . $time . " semaine" . (($time > 1) ? "s" : "");
         }
 
         return $duration;

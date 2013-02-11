@@ -3,7 +3,7 @@
 {% block body %}
     {% for blog in blogs %}
         <article class="blog">
-            <div class="date"><time datetime="{{ blog.created|date('c') }}">{{ blog.created|date('l, F j, Y') }}</time></div>
+            <div class="date"><time datetime="{{ blog.created|date('c') }}">{{ blog.created|format_date }}</time></div>
             <header>
                 <h2><a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>
             </header>
@@ -11,16 +11,16 @@
             <img src="{{ asset(['images/', blog.image]|join) }}" />
             <div class="snippet">
                 <p>{{ blog.blog(500) }}</p>
-                <p class="continue"><a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">Continue reading...</a></p>
+                <p class="continue"><a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">{{ "index.continue_reading" | trans }}</a></p>
             </div>
 
             <footer class="meta">
-                <p>Comments: <a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
-                <p>Posted by <span class="highlight">{{ blog.author }}</span> at {{ blog.created|date('h:iA') }}</p>
-                <p>Tags: <span class="highlight">{{ blog.tags }}</span></p>
+                <p>{{ "index.comments" | trans }}: <a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
+                <p>{{ "index.posted_by" | trans }} <span class="highlight">{{ blog.author }}</span> {{ "index.at" | trans }} {{ blog.created|format_time }}</p>
+                <p>{{ "index.tags" | trans }}: <span class="highlight">{{ blog.tags }}</span></p>
             </footer>
         </article>
     {% else %}
-        <p>There are no blog entries for symblog</p>
+        <p>{{ "index.there_are_no_blog_entries" | trans }}</p>
     {% endfor %}
 {% endblock %}

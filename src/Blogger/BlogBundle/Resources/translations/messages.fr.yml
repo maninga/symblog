@@ -1,0 +1,30 @@
+sidebar.tag_cloud: Nuage de tags
+sidebar.there_are_no_tags: Il n'y a aucun tag
+sidebar.latest_comments: Derniers commentaires
+sidebar.commented_on: a commenté
+sidebar.there_are_no_recente_comments: Il n'y a aucun commentaires récents
+
+index.continue_reading: Lire la suite...
+index.comments: Commentaires
+index.posted_by: Publié par
+index.at: à
+index.tags: Tags
+index.there_are_no_blog_entries: Il n'y a aucun article publié
+
+contact.title: Contactez-nous
+contact.contact_us: Contactez-nous
+contact.want_to_contact_us: Vous souhaitez nous contacter?
+contact.submit_contact_form: Envoyer
+
+about.title: A propos
+about.about_this_site: A propos de ce site
+
+comment.commented: a commenté
+comment.there_are_no_comments: Il n'y a aucun commentaire pour cet article pour l'instant. Soyez le premier à le commenter...
+comment.add_comment: Ajouter un commentaire
+comment.add_comment_for_blog_post: Ajouter un commentaire pour l'article
+
+blog.image_not_found: image introuvable
+blog.comments: Commentaires
+blog.add_comment: Ajouter un commentaire
+

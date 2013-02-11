@@ -1,12 +1,12 @@
 <section class="section">
     <header>
-        <h3>Tag Cloud</h3>
+        <h3>{{ "sidebar.tag_cloud" | trans }}</h3>
     </header>
     <p class="tags">
         {% for tag, weight in tags %}
             <span class="weight-{{ weight }}">{{ tag }}</span>
         {% else %}
-            <p>There are no tags</p>
+            <p>{{ "sidebar.there_are_no_tags" | trans }}</p>
         {% endfor %}
     </p>
 </section>
@@ -14,12 +14,12 @@
 
 <section class="section">
     <header>
-        <h3>Latest Comments</h3>
+        <h3>{{ "sidebar.latest_comments" | trans }}</h3>
     </header>
     {% for comment in latestComments %}
         <article class="comment">
             <header>
-                <p class="small"><span class="highlight">{{ comment.user }}</span> commented on
+                <p class="small"><span class="highlight">{{ comment.user }}</span> {{ "sidebar.commented_on" | trans }}
                     <a href="{{ path('BloggerBlogBundle_blog_show', { 'id': comment.blog.id, 'slug': comment.blog.slug }) }}#comment-{{ comment.id }}">
                         {{ comment.blog.title }}
                     </a>
@@ -30,6 +30,6 @@
             </p>
         </article>
     {% else %}
-        <p>There are no recent comments</p>
+        <p>{{ "sidebar.there_are_no_recente_comments" | trans }}</p>
     {% endfor %}
 </section>
