@@ -9,3 +9,16 @@ services:
         class: Blogger\BlogBundle\Twig\Extensions\BloggerBlogExtension
         tags:
             - { name: twig.extension }
+
+    bloger_blog.admin.blog:
+        class: Blogger\BlogBundle\Admin\BlogAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: blog, label: Articles }
+        arguments: [null, Blogger\BlogBundle\Entity\Blog, BloggerBlogBundle:BlogAdmin]
+
+    bloger_blog.admin.comment:
+        class: Blogger\BlogBundle\Admin\CommentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: blog, label: Commentaires }
+        arguments: [null, Blogger\BlogBundle\Entity\Comment, BloggerBlogBundle:CommentAdmin]
+
